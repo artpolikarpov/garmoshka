@@ -21,6 +21,10 @@
     }
     
     _this.initialize = function(accordion, bellowsSliceHalfWidth) {
+      if ('ontouchstart' in document) {
+        alert('Try it on your desktop [:|||||:]');
+      }
+
       _this.$garmoshka = accordion;
       _this.$bellows = $('.bellows', _this.$garmoshka);
       _this.$bellowsSlice = $('.slice', _this.$bellows);
