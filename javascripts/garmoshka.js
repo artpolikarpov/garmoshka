@@ -30,6 +30,11 @@
       _this.audio = $('audio', _this.$garmoshka).get(0);
       _this.audio.volume = 0;
 
+      if (!_this.audio.canPlayType('audio/ogg')) {
+        // Если .ogg никак, меняем на .mp3
+        _this.audio.src = _this.audio.src.replace('.ogg', '.mp3');
+      }
+
       _this.$melodyButtons = $('.melody b', _this.$garmoshka);
       _this.melodyButtonsSize = _this.$melodyButtons.size();
       _this.$chordsButtons = $('.chords b', _this.$garmoshka);
@@ -56,7 +61,7 @@
       }
     }
 
-    _this.play = function(volume) {
+    _this.play = function(volume, magic) {
       if (!volume) volume = 100;
       if (!_this.playFLAG) {
         _this.playFLAG = true;
@@ -66,7 +71,9 @@
           time: options.fadeTime / 1000,
           onStart: function() {
             _this.audio.play();
-            _this.buttonMagicStart();
+            if (magic) {
+              _this.buttonMagicStart();
+            }
           }
         });
       }
@@ -94,7 +101,6 @@
     }
 
     _this.buttonMagic = function() {
-      console.log('buttonMagic');
       _this.$allButtons.removeClass('active');
       // Сколько кнопок нажать в правом ряду, 1-3
       var melodyButtonsSize = getRandomInt(1, 2);
@@ -119,7 +125,7 @@
       var garmoshkaWidth = _this.$garmoshka.width();
       if (e.type == 'resize' && garmoshkaWidth != _this.garmoshkaWidth) {
         // Играем на гармошке, реагируем только на изменение ширины гармошки
-        _this.play();
+        _this.play(100, true);
         clearTimeout(_this.playTimeout);
         _this.playTimeout = setTimeout(function(){
           // Если мех не тянуть гармошка замолчит

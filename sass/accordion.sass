@@ -46,7 +46,7 @@ $chordsButtonSize: 22px
     bottom: 0
     left: 0
     width: $melodyWidth
-    +background(linear-gradient(#101010, #232323 75%, #0f0f0f))
+    +background(linear-gradient(#232221, #333333 75%, #1e1d1f))
 
     .panel
       position: absolute
@@ -124,26 +124,29 @@ $chordsButtonSize: 22px
     .slice
       position: absolute
       width: 100% / $bellowsSliceSize
-      top: 10px
-      bottom: 10px
+      top: 20px
+      bottom: 20px
       +perspective(500)
       &:before, &:after
         content: ''
         position: absolute
-        top: -10px
-        bottom: -10px
-        width: $bellowsSliceBorderWidth / 2
+        top: -20px
+        bottom: -20px
+        width: $bellowsSliceBorderWidth
         background: red
         z-index: 10
+        left: - $bellowsSliceBorderWidth / 2
+        +border-radius(3px)
       &:before
-        left: 0
-        +background(linear-gradient(left, #9fa79f, #727272))
-        +border-right-radius(3px)
+        +background(linear-gradient(left,  #120812, #686d68, #969996, #c6d1c6, #686768))
       &:after
-        right: 0
-        +background(linear-gradient(left, #3e3e3e, #707270, #9fa79f))
-        +border-left-radius(3px)
-      &:first-child:before, &:last-child:after
+        +background(linear-gradient(left,#495749, #260f26, #dce8dc, #f5fff5, #241024), linear-gradient(left,  #495749, #260f26, #dce8dc, #f5fff5, #241024), linear-gradient(left,  #131013, #363036, #757475, #adb6ad, #281e28), linear-gradient(left,  #131013, #363036, #757475, #adb6ad, #281e28))
+
+        background-position: 0 0, 0 100%, 0 0, 0 100%
+        +background-size((100% 15px), (100% 15px), (100% 17px), (100% 17px))
+        background-repeat: no-repeat
+
+      &:first-child:before, &:first-child:after
         display: none
 
       .l, .r
@@ -170,7 +173,7 @@ $chordsButtonSize: 22px
     bottom: 0
     right: 0
     width: $chordsWidth
-    +background(linear-gradient(#101010, #232323 75%, #0f0f0f))
+    +background(linear-gradient(#232221, #333333 75%, #1e1d1f))
     .panel
       position: absolute
       top: 0
