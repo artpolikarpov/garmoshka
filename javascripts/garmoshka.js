@@ -1,6 +1,8 @@
 /*! Garmoshka | Artem Polikarpov */
 (function(){
   var $window = $(window);
+  var userAgent = navigator.userAgent.toLowerCase();
+  var mobileFLAG = userAgent.match(/(phone|ipod|ipad|windows ce|netfront|playstation|midp|up\.browser|android|mobile|mini|tablet|symbian|nintendo|wii)/);
 
   // использование Math.round() даст неравномерное распределение!
   var getRandomInt = function(min, max) {
@@ -21,7 +23,8 @@
     }
     
     _this.initialize = function(accordion, bellowsSliceHalfWidth) {
-      if ('ontouchstart' in document) {
+
+      if (mobileFLAG) {
         alert('Try it on your desktop [:|||||:]');
       }
 
