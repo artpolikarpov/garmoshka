@@ -88,13 +88,13 @@
       if (!volume) volume = 0;
       if (_this.playFLAG) {
         _this.playFLAG = false;
+        _this.buttonMagicStop();
         jTweener.removeTween(_this.volumeFader);
         jTweener.addTween(_this.volumeFader, {
           value: volume,
           time: options.fadeTime / 1000,
           onComplete: function() {
             _this.audio.pause();
-            _this.buttonMagicStop();
           }
         });
       }
@@ -131,12 +131,15 @@
       if (e.type == 'resize' && garmoshkaWidth != _this.garmoshkaWidth) {
         // Играем на гармошке, реагируем только на изменение ширины гармошки
         _this.play(100, true);
+
         clearTimeout(_this.playTimeout);
         _this.playTimeout = setTimeout(function(){
           // Если мех не тянуть гармошка замолчит
           _this.stop();
         }, options.playTimeoutLength);
       }
+
+
       
       // Считаем ширину, чтобы понять насколько сдвигать меха
       _this.accordionWidth = _this.$garmoshka.width();
