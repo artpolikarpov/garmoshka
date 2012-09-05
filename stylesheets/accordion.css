@@ -1,0 +1,565 @@
+/* line 3, ../sass/accordion.sass */
+body {
+  margin: 0;
+  background: black;
+}
+
+/* line 22, ../sass/accordion.sass */
+.garmoshka {
+  max-width: 1600px;
+  min-width: 560px;
+  min-height: 590px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/* line 32, ../sass/accordion.sass */
+.garmoshka .button, .garmoshka .melody .buttons b:after, .garmoshka .chords .buttons b:after {
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 0 2px 2px white inset, -1px 0 4px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 2px 2px white inset, -1px 0 4px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 2px 2px white inset, -1px 0 4px 2px rgba(0, 0, 0, 0.75);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d0d0d0), color-stop(100%, #fdfdfd));
+  background: -webkit-linear-gradient(#d0d0d0, #fdfdfd);
+  background: -moz-linear-gradient(#d0d0d0, #fdfdfd);
+  background: -o-linear-gradient(#d0d0d0, #fdfdfd);
+  background: -ms-linear-gradient(#d0d0d0, #fdfdfd);
+  background: linear-gradient(#d0d0d0, #fdfdfd);
+  width: 30px;
+  height: 30px;
+}
+/* line 38, ../sass/accordion.sass */
+.garmoshka .button:active, .garmoshka .melody .buttons b:active:after, .garmoshka .chords .buttons b:active:after, .garmoshka .button.active, .garmoshka .melody .buttons b.active:after, .garmoshka .chords .buttons b.active:after {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #aaaaaa), color-stop(100%, #d7d7d7));
+  background: -webkit-linear-gradient(#aaaaaa, #d7d7d7);
+  background: -moz-linear-gradient(#aaaaaa, #d7d7d7);
+  background: -o-linear-gradient(#aaaaaa, #d7d7d7);
+  background: -ms-linear-gradient(#aaaaaa, #d7d7d7);
+  background: linear-gradient(#aaaaaa, #d7d7d7);
+  -webkit-box-shadow: 0 0 2px 2px #d9d9d9 inset, -1px 0 4px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 2px 2px #d9d9d9 inset, -1px 0 4px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 2px 2px #d9d9d9 inset, -1px 0 4px 2px rgba(0, 0, 0, 0.75);
+}
+/* line 43, ../sass/accordion.sass */
+.garmoshka .melody {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #101010), color-stop(75%, #232323), color-stop(100%, #0f0f0f));
+  background: -webkit-linear-gradient(#101010, #232323 75%, #0f0f0f);
+  background: -moz-linear-gradient(#101010, #232323 75%, #0f0f0f);
+  background: -o-linear-gradient(#101010, #232323 75%, #0f0f0f);
+  background: -ms-linear-gradient(#101010, #232323 75%, #0f0f0f);
+  background: linear-gradient(#101010, #232323 75%, #0f0f0f);
+}
+/* line 51, ../sass/accordion.sass */
+.garmoshka .melody .panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 150px;
+  width: 50px;
+  z-index: 10;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
+}
+/* line 59, ../sass/accordion.sass */
+.garmoshka .melody .panel .sign {
+  font-size: 32px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(10px, -50%);
+  -moz-transform: translate(10px, -50%);
+  -ms-transform: translate(10px, -50%);
+  -o-transform: translate(10px, -50%);
+  transform: translate(10px, -50%);
+  top: 50%;
+}
+/* line 65, ../sass/accordion.sass */
+.garmoshka .melody .panel .sign i {
+  display: block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
+}
+/* line 69, ../sass/accordion.sass */
+.garmoshka .melody .buttons {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  background: rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: -30px 0 10px -10px black inset;
+  -moz-box-shadow: -30px 0 10px -10px black inset;
+  box-shadow: -30px 0 10px -10px black inset;
+}
+/* line 78, ../sass/accordion.sass */
+.garmoshka .melody .buttons b {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  -webkit-transform-origin: 100% 0%;
+  -moz-transform-origin: 100% 0%;
+  -ms-transform-origin: 100% 0%;
+  -o-transform-origin: 100% 0%;
+  transform-origin: 100% 0%;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(1) {
+  top: 0px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(2) {
+  top: 39px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(3) {
+  top: 78px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(4) {
+  top: 117px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(5) {
+  top: 156px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(6) {
+  top: 195px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(7) {
+  top: 234px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(8) {
+  top: 273px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(9) {
+  top: 312px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(10) {
+  top: 351px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(11) {
+  top: 390px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(12) {
+  top: 429px;
+}
+/* line 84, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:nth-child(13) {
+  top: 468px;
+}
+/* line 86, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:after {
+  content: "";
+  position: absolute;
+}
+/* line 90, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:before {
+  content: "";
+  width: 200px;
+  height: 2px;
+  top: 14px;
+  left: 0;
+  position: absolute;
+  background: white;
+  -webkit-box-shadow: 1px 2px 0 black;
+  -moz-box-shadow: 1px 2px 0 black;
+  box-shadow: 1px 2px 0 black;
+}
+/* line 100, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:active:after, .garmoshka .melody .buttons b.active:after {
+  margin-left: 1px;
+}
+/* line 102, ../sass/accordion.sass */
+.garmoshka .melody .buttons b:active:before, .garmoshka .melody .buttons b.active:before {
+  -webkit-box-shadow: 1px 0 0 black;
+  -moz-box-shadow: 1px 0 0 black;
+  box-shadow: 1px 0 0 black;
+  background: #d9d9d9;
+}
+/* line 105, ../sass/accordion.sass */
+.garmoshka .melody .buttons .line-1, .garmoshka .melody .buttons .line-2 {
+  top: 50%;
+  margin-top: -253.5px;
+  position: absolute;
+}
+/* line 110, ../sass/accordion.sass */
+.garmoshka .melody .buttons .line-1 b {
+  left: 30px;
+}
+/* line 113, ../sass/accordion.sass */
+.garmoshka .melody .buttons .line-2 b {
+  left: 90px;
+  margin-top: 19.5px;
+}
+/* line 118, ../sass/accordion.sass */
+.garmoshka .bellows {
+  position: absolute;
+  top: 0;
+  right: 200px;
+  bottom: 0;
+  left: 200px;
+}
+/* line 124, ../sass/accordion.sass */
+.garmoshka .bellows .slice {
+  position: absolute;
+  width: 5%;
+  top: 10px;
+  bottom: 10px;
+  -webkit-perspective: 500;
+  perspective: 500;
+}
+/* line 130, ../sass/accordion.sass */
+.garmoshka .bellows .slice:before, .garmoshka .bellows .slice:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  width: 3px;
+  background: red;
+  z-index: 10;
+}
+/* line 138, ../sass/accordion.sass */
+.garmoshka .bellows .slice:before {
+  left: 0;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #9fa79f), color-stop(100%, #727272));
+  background: -webkit-linear-gradient(left, #9fa79f, #727272);
+  background: -moz-linear-gradient(left, #9fa79f, #727272);
+  background: -o-linear-gradient(left, #9fa79f, #727272);
+  background: -ms-linear-gradient(left, #9fa79f, #727272);
+  background: linear-gradient(left, #9fa79f, #727272);
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -ms-border-top-right-radius: 3px;
+  -o-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -ms-border-bottom-right-radius: 3px;
+  -o-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+/* line 142, ../sass/accordion.sass */
+.garmoshka .bellows .slice:after {
+  right: 0;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #3e3e3e), color-stop(50%, #707270), color-stop(100%, #9fa79f));
+  background: -webkit-linear-gradient(left, #3e3e3e, #707270, #9fa79f);
+  background: -moz-linear-gradient(left, #3e3e3e, #707270, #9fa79f);
+  background: -o-linear-gradient(left, #3e3e3e, #707270, #9fa79f);
+  background: -ms-linear-gradient(left, #3e3e3e, #707270, #9fa79f);
+  background: linear-gradient(left, #3e3e3e, #707270, #9fa79f);
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  -ms-border-top-left-radius: 3px;
+  -o-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -ms-border-bottom-left-radius: 3px;
+  -o-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+/* line 146, ../sass/accordion.sass */
+.garmoshka .bellows .slice:first-child:before, .garmoshka .bellows .slice:last-child:after {
+  display: none;
+}
+/* line 149, ../sass/accordion.sass */
+.garmoshka .bellows .slice .l, .garmoshka .bellows .slice .r {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+}
+/* line 155, ../sass/accordion.sass */
+.garmoshka .bellows .slice .l {
+  left: 2%;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #4f4b4f), color-stop(11.111%, #4f4f4f), color-stop(22.222%, #4b4b4b), color-stop(33.333%, #454545), color-stop(44.444%, #404040), color-stop(55.556%, #3a3a3a), color-stop(66.667%, #353435), color-stop(77.778%, #363a36), color-stop(88.889%, #1f201f), color-stop(100%, #000000));
+  background: -webkit-linear-gradient(left, #4f4b4f, #4f4f4f, #4b4b4b, #454545, #404040, #3a3a3a, #353435, #363a36, #1f201f, #000000);
+  background: -moz-linear-gradient(left, #4f4b4f, #4f4f4f, #4b4b4b, #454545, #404040, #3a3a3a, #353435, #363a36, #1f201f, #000000);
+  background: -o-linear-gradient(left, #4f4b4f, #4f4f4f, #4b4b4b, #454545, #404040, #3a3a3a, #353435, #363a36, #1f201f, #000000);
+  background: -ms-linear-gradient(left, #4f4b4f, #4f4f4f, #4b4b4b, #454545, #404040, #3a3a3a, #353435, #363a36, #1f201f, #000000);
+  background: linear-gradient(left, #4f4b4f, #4f4f4f, #4b4b4b, #454545, #404040, #3a3a3a, #353435, #363a36, #1f201f, #000000);
+  -webkit-transform-origin: 0 50%;
+  -moz-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  -o-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+/* line 159, ../sass/accordion.sass */
+.garmoshka .bellows .slice .r {
+  left: 48%;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #000000), color-stop(11.111%, #000000), color-stop(22.222%, #040404), color-stop(33.333%, #090909), color-stop(44.444%, #0e0e0e), color-stop(55.556%, #141414), color-stop(66.667%, #1a1a1a), color-stop(77.778%, #202420), color-stop(88.889%, #151414), color-stop(100%, #0d030d));
+  background: -webkit-linear-gradient(left, #000000, #000000, #040404, #090909, #0e0e0e, #141414, #1a1a1a, #202420, #151414, #0d030d);
+  background: -moz-linear-gradient(left, #000000, #000000, #040404, #090909, #0e0e0e, #141414, #1a1a1a, #202420, #151414, #0d030d);
+  background: -o-linear-gradient(left, #000000, #000000, #040404, #090909, #0e0e0e, #141414, #1a1a1a, #202420, #151414, #0d030d);
+  background: -ms-linear-gradient(left, #000000, #000000, #040404, #090909, #0e0e0e, #141414, #1a1a1a, #202420, #151414, #0d030d);
+  background: linear-gradient(left, #000000, #000000, #040404, #090909, #0e0e0e, #141414, #1a1a1a, #202420, #151414, #0d030d);
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(1) {
+  left: 0%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(2) {
+  left: 5%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(3) {
+  left: 10%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(4) {
+  left: 15%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(5) {
+  left: 20%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(6) {
+  left: 25%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(7) {
+  left: 30%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(8) {
+  left: 35%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(9) {
+  left: 40%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(10) {
+  left: 45%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(11) {
+  left: 50%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(12) {
+  left: 55%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(13) {
+  left: 60%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(14) {
+  left: 65%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(15) {
+  left: 70%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(16) {
+  left: 75%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(17) {
+  left: 80%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(18) {
+  left: 85%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(19) {
+  left: 90%;
+}
+/* line 164, ../sass/accordion.sass */
+.garmoshka .bellows .slice:nth-child(20) {
+  left: 95%;
+}
+/* line 167, ../sass/accordion.sass */
+.garmoshka .chords {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #101010), color-stop(75%, #232323), color-stop(100%, #0f0f0f));
+  background: -webkit-linear-gradient(#101010, #232323 75%, #0f0f0f);
+  background: -moz-linear-gradient(#101010, #232323 75%, #0f0f0f);
+  background: -o-linear-gradient(#101010, #232323 75%, #0f0f0f);
+  background: -ms-linear-gradient(#101010, #232323 75%, #0f0f0f);
+  background: linear-gradient(#101010, #232323 75%, #0f0f0f);
+}
+/* line 174, ../sass/accordion.sass */
+.garmoshka .chords .panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  -webkit-box-shadow: -30px 0 25px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -30px 0 25px rgba(0, 0, 0, 0.5);
+  box-shadow: -30px 0 25px rgba(0, 0, 0, 0.5);
+}
+/* line 181, ../sass/accordion.sass */
+.garmoshka .chords .panel h1 {
+  position: absolute;
+  -webkit-transform: translate(10px, -50%);
+  -moz-transform: translate(10px, -50%);
+  -ms-transform: translate(10px, -50%);
+  -o-transform: translate(10px, -50%);
+  transform: translate(10px, -50%);
+  top: 50%;
+  font-size: 32px;
+}
+/* line 186, ../sass/accordion.sass */
+.garmoshka .chords .panel h1 i {
+  display: block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
+}
+/* line 190, ../sass/accordion.sass */
+.garmoshka .chords .buttons {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  right: 0;
+  width: 150px;
+  background: rgba(100, 100, 100, 0.05);
+  -webkit-box-shadow: 2px 0 2px 0 rgba(0, 0, 0, 0.25) inset;
+  -moz-box-shadow: 2px 0 2px 0 rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 2px 0 2px 0 rgba(0, 0, 0, 0.25) inset;
+  -moz-border-radius-topleft: 30px;
+  -webkit-border-top-left-radius: 30px;
+  -ms-border-top-left-radius: 30px;
+  -o-border-top-left-radius: 30px;
+  border-top-left-radius: 30px;
+  -moz-border-radius-bottomleft: 30px;
+  -webkit-border-bottom-left-radius: 30px;
+  -ms-border-bottom-left-radius: 30px;
+  -o-border-bottom-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+/* line 199, ../sass/accordion.sass */
+.garmoshka .chords .buttons b {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(1) {
+  top: 0px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(2) {
+  top: 38.5px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(3) {
+  top: 77px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(4) {
+  top: 115.5px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(5) {
+  top: 154px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(6) {
+  top: 192.5px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(7) {
+  top: 231px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(8) {
+  top: 269.5px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(9) {
+  top: 308px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(10) {
+  top: 346.5px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(11) {
+  top: 385px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(12) {
+  top: 423.5px;
+}
+/* line 204, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:nth-child(13) {
+  top: 462px;
+}
+/* line 206, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  position: absolute;
+}
+/* line 213, ../sass/accordion.sass */
+.garmoshka .chords .buttons b:active:after, .garmoshka .chords .buttons b.active:after {
+  -webkit-box-shadow: 0 0 2px 2px #d9d9d9 inset, -1px 0 2px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 2px 2px #d9d9d9 inset, -1px 0 2px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 2px 2px #d9d9d9 inset, -1px 0 2px 1px rgba(0, 0, 0, 0.75);
+}
+/* line 215, ../sass/accordion.sass */
+.garmoshka .chords .buttons .line-1, .garmoshka .chords .buttons .line-2, .garmoshka .chords .buttons .line-3 {
+  top: 50%;
+  margin-top: -154px;
+  position: absolute;
+  left: 2px;
+}
+/* line 221, ../sass/accordion.sass */
+.garmoshka .chords .buttons .line-1 b {
+  left: 22px;
+}
+/* line 224, ../sass/accordion.sass */
+.garmoshka .chords .buttons .line-2 b {
+  left: 66px;
+  margin-top: 14.667px;
+}
+/* line 228, ../sass/accordion.sass */
+.garmoshka .chords .buttons .line-3 b {
+  left: 110px;
+  margin-top: 0;
+}
