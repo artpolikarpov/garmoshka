@@ -1,13 +1,12 @@
 /* Garmoshka | https://github.com/artpolikarpov/garmoshka */
-/* line 4, ../sass/accordion.sass */
+/* line 4, ../sass/garmoshka.sass */
 body {
   margin: 0;
   background: black;
 }
 
-/* line 23, ../sass/accordion.sass */
+/* line 23, ../sass/garmoshka.sass */
 .garmoshka {
-  max-width: 1600px;
   min-width: 560px;
   min-height: 590px;
   position: absolute;
@@ -16,8 +15,8 @@ body {
   bottom: 0;
   left: 0;
 }
-/* line 33, ../sass/accordion.sass */
-.garmoshka .button, .garmoshka .melody .buttons b:after, .garmoshka .chords .buttons b:after {
+/* line 33, ../sass/garmoshka.sass */
+.garmoshka .button, .garmoshka .melody .buttons button:after, .garmoshka .chords .buttons button:after {
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
@@ -34,9 +33,11 @@ body {
   background: linear-gradient(#d0d0d0, #fdfdfd);
   width: 30px;
   height: 30px;
+  top: 0;
+  left: 0;
 }
-/* line 39, ../sass/accordion.sass */
-.garmoshka .button:active, .garmoshka .melody .buttons b:active:after, .garmoshka .chords .buttons b:active:after, .garmoshka .button.active, .garmoshka .melody .buttons b.active:after, .garmoshka .chords .buttons b.active:after {
+/* line 41, ../sass/garmoshka.sass */
+.garmoshka .button:active, .garmoshka .melody .buttons button:active:after, .garmoshka .chords .buttons button:active:after, .garmoshka .button.active, .garmoshka .melody .buttons button.active:after, .garmoshka .chords .buttons button.active:after {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #aaaaaa), color-stop(100%, #d7d7d7));
   background: -webkit-linear-gradient(#aaaaaa, #d7d7d7);
   background: -moz-linear-gradient(#aaaaaa, #d7d7d7);
@@ -47,7 +48,7 @@ body {
   -moz-box-shadow: 0 0 2px 2px #d9d9d9 inset, -1px 0 4px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 0 0 2px 2px #d9d9d9 inset, -1px 0 4px 2px rgba(0, 0, 0, 0.75);
 }
-/* line 44, ../sass/accordion.sass */
+/* line 46, ../sass/garmoshka.sass */
 .garmoshka .melody {
   position: absolute;
   top: 0;
@@ -61,7 +62,7 @@ body {
   background: -ms-linear-gradient(#232221, #333333 75%, #1e1d1f);
   background: linear-gradient(#232221, #333333 75%, #1e1d1f);
 }
-/* line 52, ../sass/accordion.sass */
+/* line 54, ../sass/garmoshka.sass */
 .garmoshka .melody .panel {
   position: absolute;
   top: 0;
@@ -73,29 +74,26 @@ body {
   -moz-box-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
 }
-/* line 60, ../sass/accordion.sass */
+/* line 62, ../sass/garmoshka.sass */
 .garmoshka .melody .panel .sign {
   font-size: 32px;
   position: absolute;
   top: 50%;
+  margin-top: -0.5em;
+  margin-left: 10px;
   -webkit-transform: translate(10px, -50%);
   -moz-transform: translate(10px, -50%);
   -ms-transform: translate(10px, -50%);
   -o-transform: translate(10px, -50%);
   transform: translate(10px, -50%);
-  top: 50%;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
 }
-/* line 66, ../sass/accordion.sass */
-.garmoshka .melody .panel .sign i {
-  display: block;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
-}
-/* line 70, ../sass/accordion.sass */
+/* line 71, ../sass/garmoshka.sass */
 .garmoshka .melody .buttons {
   position: absolute;
   overflow: hidden;
@@ -108,8 +106,13 @@ body {
   -moz-box-shadow: -30px 0 10px -10px black inset;
   box-shadow: -30px 0 10px -10px black inset;
 }
-/* line 79, ../sass/accordion.sass */
-.garmoshka .melody .buttons b {
+/* line 80, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: block;
   position: absolute;
   width: 30px;
   height: 30px;
@@ -118,66 +121,67 @@ body {
   -ms-transform-origin: 100% 0%;
   -o-transform-origin: 100% 0%;
   transform-origin: 100% 0%;
+  outline: none;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(1) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(1) {
   top: 0px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(2) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(2) {
   top: 39px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(3) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(3) {
   top: 78px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(4) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(4) {
   top: 117px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(5) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(5) {
   top: 156px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(6) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(6) {
   top: 195px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(7) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(7) {
   top: 234px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(8) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(8) {
   top: 273px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(9) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(9) {
   top: 312px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(10) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(10) {
   top: 351px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(11) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(11) {
   top: 390px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(12) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(12) {
   top: 429px;
 }
-/* line 85, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:nth-child(13) {
+/* line 92, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:nth-child(13) {
   top: 468px;
 }
-/* line 87, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:after {
+/* line 94, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:after {
   content: "";
   position: absolute;
 }
-/* line 91, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:before {
+/* line 98, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:before {
   content: "";
   width: 200px;
   height: 2px;
@@ -189,33 +193,33 @@ body {
   -moz-box-shadow: 1px 2px 0 black;
   box-shadow: 1px 2px 0 black;
 }
-/* line 101, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:active:after, .garmoshka .melody .buttons b.active:after {
+/* line 108, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:active:after, .garmoshka .melody .buttons button.active:after {
   margin-left: 1px;
 }
-/* line 103, ../sass/accordion.sass */
-.garmoshka .melody .buttons b:active:before, .garmoshka .melody .buttons b.active:before {
+/* line 110, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons button:active:before, .garmoshka .melody .buttons button.active:before {
   -webkit-box-shadow: 1px 0 0 black;
   -moz-box-shadow: 1px 0 0 black;
   box-shadow: 1px 0 0 black;
   background: #d9d9d9;
 }
-/* line 106, ../sass/accordion.sass */
+/* line 113, ../sass/garmoshka.sass */
 .garmoshka .melody .buttons .line-1, .garmoshka .melody .buttons .line-2 {
   top: 50%;
   margin-top: -253.5px;
   position: absolute;
 }
-/* line 111, ../sass/accordion.sass */
-.garmoshka .melody .buttons .line-1 b {
+/* line 118, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons .line-1 button {
   left: 30px;
 }
-/* line 114, ../sass/accordion.sass */
-.garmoshka .melody .buttons .line-2 b {
+/* line 121, ../sass/garmoshka.sass */
+.garmoshka .melody .buttons .line-2 button {
   left: 90px;
   margin-top: 19.5px;
 }
-/* line 119, ../sass/accordion.sass */
+/* line 126, ../sass/garmoshka.sass */
 .garmoshka .bellows {
   position: absolute;
   top: 0;
@@ -223,7 +227,7 @@ body {
   bottom: 0;
   left: 200px;
 }
-/* line 125, ../sass/accordion.sass */
+/* line 132, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice {
   position: absolute;
   width: 5%;
@@ -232,7 +236,7 @@ body {
   -webkit-perspective: 500;
   perspective: 500;
 }
-/* line 131, ../sass/accordion.sass */
+/* line 138, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:before, .garmoshka .bellows .slice:after {
   content: "";
   position: absolute;
@@ -248,7 +252,7 @@ body {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 141, ../sass/accordion.sass */
+/* line 148, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:before {
   background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #120812), color-stop(25%, #686d68), color-stop(50%, #969996), color-stop(75%, #c6d1c6), color-stop(100%, #686768));
   background: -webkit-linear-gradient(left, #120812, #686d68, #969996, #c6d1c6, #686768);
@@ -257,7 +261,7 @@ body {
   background: -ms-linear-gradient(left, #120812, #686d68, #969996, #c6d1c6, #686768);
   background: linear-gradient(left, #120812, #686d68, #969996, #c6d1c6, #686768);
 }
-/* line 143, ../sass/accordion.sass */
+/* line 150, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:after {
   background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #495749), color-stop(25%, #260f26), color-stop(50%, #dce8dc), color-stop(75%, #f5fff5), color-stop(100%, #241024)), -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #495749), color-stop(25%, #260f26), color-stop(50%, #dce8dc), color-stop(75%, #f5fff5), color-stop(100%, #241024)), -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #131013), color-stop(25%, #363036), color-stop(50%, #757475), color-stop(75%, #adb6ad), color-stop(100%, #281e28)), -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #131013), color-stop(25%, #363036), color-stop(50%, #757475), color-stop(75%, #adb6ad), color-stop(100%, #281e28));
   background: -webkit-linear-gradient(left, #495749, #260f26, #dce8dc, #f5fff5, #241024), -webkit-linear-gradient(left, #495749, #260f26, #dce8dc, #f5fff5, #241024), -webkit-linear-gradient(left, #131013, #363036, #757475, #adb6ad, #281e28), -webkit-linear-gradient(left, #131013, #363036, #757475, #adb6ad, #281e28);
@@ -272,11 +276,11 @@ body {
   background-size: 100% 15px, 100% 15px, 100% 17px, 100% 17px;
   background-repeat: no-repeat;
 }
-/* line 150, ../sass/accordion.sass */
+/* line 157, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:first-child:before, .garmoshka .bellows .slice:first-child:after {
   display: none;
 }
-/* line 153, ../sass/accordion.sass */
+/* line 160, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice .l, .garmoshka .bellows .slice .r {
   content: "";
   position: absolute;
@@ -284,7 +288,7 @@ body {
   bottom: 0;
   width: 30px;
 }
-/* line 159, ../sass/accordion.sass */
+/* line 166, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice .l {
   left: 2%;
   background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #4f4b4f), color-stop(11.111%, #4f4f4f), color-stop(22.222%, #4b4b4b), color-stop(33.333%, #454545), color-stop(44.444%, #404040), color-stop(55.556%, #3a3a3a), color-stop(66.667%, #353435), color-stop(77.778%, #363a36), color-stop(88.889%, #1f201f), color-stop(100%, #000000));
@@ -299,7 +303,7 @@ body {
   -o-transform-origin: 0 50%;
   transform-origin: 0 50%;
 }
-/* line 163, ../sass/accordion.sass */
+/* line 170, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice .r {
   left: 48%;
   background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #000000), color-stop(11.111%, #000000), color-stop(22.222%, #040404), color-stop(33.333%, #090909), color-stop(44.444%, #0e0e0e), color-stop(55.556%, #141414), color-stop(66.667%, #1a1a1a), color-stop(77.778%, #202420), color-stop(88.889%, #151414), color-stop(100%, #0d030d));
@@ -314,87 +318,87 @@ body {
   -o-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(1) {
   left: 0%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(2) {
   left: 5%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(3) {
   left: 10%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(4) {
   left: 15%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(5) {
   left: 20%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(6) {
   left: 25%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(7) {
   left: 30%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(8) {
   left: 35%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(9) {
   left: 40%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(10) {
   left: 45%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(11) {
   left: 50%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(12) {
   left: 55%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(13) {
   left: 60%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(14) {
   left: 65%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(15) {
   left: 70%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(16) {
   left: 75%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(17) {
   left: 80%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(18) {
   left: 85%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(19) {
   left: 90%;
 }
-/* line 168, ../sass/accordion.sass */
+/* line 175, ../sass/garmoshka.sass */
 .garmoshka .bellows .slice:nth-child(20) {
   left: 95%;
 }
-/* line 171, ../sass/accordion.sass */
+/* line 178, ../sass/garmoshka.sass */
 .garmoshka .chords {
   position: absolute;
   top: 0;
@@ -408,7 +412,7 @@ body {
   background: -ms-linear-gradient(#232221, #333333 75%, #1e1d1f);
   background: linear-gradient(#232221, #333333 75%, #1e1d1f);
 }
-/* line 178, ../sass/accordion.sass */
+/* line 185, ../sass/garmoshka.sass */
 .garmoshka .chords .panel {
   position: absolute;
   top: 0;
@@ -419,28 +423,26 @@ body {
   -moz-box-shadow: -30px 0 25px rgba(0, 0, 0, 0.5);
   box-shadow: -30px 0 25px rgba(0, 0, 0, 0.5);
 }
-/* line 185, ../sass/accordion.sass */
+/* line 192, ../sass/garmoshka.sass */
 .garmoshka .chords .panel h1 {
   position: absolute;
-  -webkit-transform: translate(10px, -50%);
-  -moz-transform: translate(10px, -50%);
-  -ms-transform: translate(10px, -50%);
-  -o-transform: translate(10px, -50%);
-  transform: translate(10px, -50%);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
   top: 50%;
+  width: 10em;
+  left: -5em;
+  margin-top: -0.5em;
+  margin-left: 25px;
+  letter-spacing: 5px;
+  text-align: center;
   font-size: 32px;
+  color: #111111;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
 }
-/* line 190, ../sass/accordion.sass */
-.garmoshka .chords .panel h1 i {
-  display: block;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
-}
-/* line 194, ../sass/accordion.sass */
+/* line 206, ../sass/garmoshka.sass */
 .garmoshka .chords .buttons {
   position: absolute;
   top: 40px;
@@ -462,95 +464,101 @@ body {
   -o-border-bottom-left-radius: 30px;
   border-bottom-left-radius: 30px;
 }
-/* line 203, ../sass/accordion.sass */
-.garmoshka .chords .buttons b {
+/* line 215, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button {
   position: absolute;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: block;
   width: 22px;
   height: 22px;
+  outline: none;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(1) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(1) {
   top: 0px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(2) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(2) {
   top: 38.5px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(3) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(3) {
   top: 77px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(4) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(4) {
   top: 115.5px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(5) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(5) {
   top: 154px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(6) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(6) {
   top: 192.5px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(7) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(7) {
   top: 231px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(8) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(8) {
   top: 269.5px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(9) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(9) {
   top: 308px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(10) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(10) {
   top: 346.5px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(11) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(11) {
   top: 385px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(12) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(12) {
   top: 423.5px;
 }
-/* line 208, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:nth-child(13) {
+/* line 226, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:nth-child(13) {
   top: 462px;
 }
-/* line 210, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:after {
+/* line 228, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:after {
   content: "";
   width: 22px;
   height: 22px;
   position: absolute;
 }
-/* line 217, ../sass/accordion.sass */
-.garmoshka .chords .buttons b:active:after, .garmoshka .chords .buttons b.active:after {
+/* line 235, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons button:active:after, .garmoshka .chords .buttons button.active:after {
   -webkit-box-shadow: 0 0 2px 2px #d9d9d9 inset, -1px 0 2px 1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0 0 2px 2px #d9d9d9 inset, -1px 0 2px 1px rgba(0, 0, 0, 0.75);
   box-shadow: 0 0 2px 2px #d9d9d9 inset, -1px 0 2px 1px rgba(0, 0, 0, 0.75);
 }
-/* line 219, ../sass/accordion.sass */
+/* line 237, ../sass/garmoshka.sass */
 .garmoshka .chords .buttons .line-1, .garmoshka .chords .buttons .line-2, .garmoshka .chords .buttons .line-3 {
   top: 50%;
   margin-top: -154px;
   position: absolute;
   left: 2px;
 }
-/* line 225, ../sass/accordion.sass */
-.garmoshka .chords .buttons .line-1 b {
+/* line 243, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons .line-1 button {
   left: 22px;
 }
-/* line 228, ../sass/accordion.sass */
-.garmoshka .chords .buttons .line-2 b {
+/* line 246, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons .line-2 button {
   left: 66px;
   margin-top: 14.667px;
 }
-/* line 232, ../sass/accordion.sass */
-.garmoshka .chords .buttons .line-3 b {
+/* line 250, ../sass/garmoshka.sass */
+.garmoshka .chords .buttons .line-3 button {
   left: 110px;
   margin-top: 0;
 }

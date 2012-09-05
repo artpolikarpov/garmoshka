@@ -21,7 +21,7 @@ $chordsButtonSize: 22px
 
 
 .garmoshka
-  max-width: $bellowsSliceHalfWidth * 2 * $bellowsSliceSize + $chordsWidth + $melodyWidth
+  //max-width: $bellowsSliceHalfWidth * 2 * $bellowsSliceSize + $chordsWidth + $melodyWidth
   min-width: ($bellowsSliceBorderWidth + 2) * $bellowsSliceSize + $chordsWidth + $melodyWidth
   min-height: $melodyButtonSize * 1.3 * 10 + 200
   position: absolute
@@ -36,6 +36,8 @@ $chordsButtonSize: 22px
     +background(linear-gradient(#d0d0d0, #fdfdfd))
     width: $melodyButtonSize
     height: $melodyButtonSize
+    top: 0
+    left: 0
     &:active, &.active
       +background(linear-gradient(darken(#d0d0d0,15%), darken(#fdfdfd,15%)))
       +box-shadow(0 0 2px 2px darken(#fff,15%) inset, -1px 0 4px 2px rgba(0, 0, 0, .75))
@@ -61,12 +63,11 @@ $chordsButtonSize: 22px
         font-size: 32px
         position: absolute
         top: 50%
+        margin-top: -.5em
+        margin-left: 10px
         +transform(translate(10px, -50%))
-        top: 50%
-        i
-          display: block
-          +rotate(90deg)
-          text-shadow: 0 -1px 0 rgba(255, 255, 255, .25)
+        +rotate(-90deg)
+        text-shadow: 0 1px 0 rgba(255, 255, 255, .25)
     .buttons
       position: absolute
       overflow: hidden
@@ -76,11 +77,17 @@ $chordsButtonSize: 22px
       width: $melodyButtonsWidth
       background: rgba(0,0,0,.25)
       +box-shadow(-30px 0 10px -10px rgba(0,0,0,1) inset)
-      b
+      button
+        background: none
+        border: none
+        margin: 0
+        padding: 0
+        display: block
         position: absolute
         width: $melodyButtonSize
         height: $melodyButtonSize
         +transform-origin(100%, 0%)
+        outline: none
         @for $i from 1 through 13
           &:nth-child(#{$i})
             top: $melodyButtonSize * 1.3 * ($i - 1)
@@ -108,10 +115,10 @@ $chordsButtonSize: 22px
         margin-top: -($melodyButtonSize * 1.3 * 13 / 2)
         position: absolute
       .line-1
-        b
+        button
           left: $melodyButtonSize
       .line-2
-        b
+        button
           left: $melodyButtonSize*2 + $melodyButtonSize
           margin-top: $melodyButtonSize * 1.3 /2
 
@@ -184,13 +191,18 @@ $chordsButtonSize: 22px
       +box-shadow(-30px 0 25px rgba(0,0,0,.5))
       h1
         position: absolute
-        +transform(translate(10px, -50%))
+        //+transform-origin(0, 0)
+        +transform(rotate(-90deg))
         top: 50%
+        width: 10em
+        left: -5em
+        margin-top: -.5em
+        margin-left: 25px
+        letter-spacing: 5px
+        text-align: center
         font-size: 32px
-        i
-          display: block
-          +rotate(90deg)
-          text-shadow: 0 -1px 0 rgba(255, 255, 255, .25)
+        color: #111
+        text-shadow: 0 1px 0 rgba(255, 255, 255, .25)
     .buttons
       position: absolute
       top: 40px
@@ -200,10 +212,16 @@ $chordsButtonSize: 22px
       background: rgba(100,100,100,.05)
       +box-shadow(2px 0 2px 0 rgba(0,0,0,.25) inset)
       +border-left-radius(30px)
-      b
+      button
         position: absolute
+        background: none
+        border: none
+        margin: 0
+        padding: 0
+        display: block
         width: $chordsButtonSize
         height: $chordsButtonSize
+        outline: none
         @for $i from 1 through 13
           &:nth-child(#{$i})
             top: $chordsButtonSize * 1.75 * ($i - 1)
@@ -222,13 +240,13 @@ $chordsButtonSize: 22px
         position: absolute
         left: 2px
       .line-1
-        b
+        button
           left: $chordsButtonSize
       .line-2
-        b
+        button
           left: $chordsButtonSize*2 + $chordsButtonSize
           margin-top: $chordsButtonSize/3*2
       .line-3
-        b
+        button
           left: $chordsButtonSize*3 + $chordsButtonSize*2
           margin-top: 0

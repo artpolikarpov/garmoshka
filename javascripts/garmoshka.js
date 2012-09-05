@@ -17,16 +17,18 @@
       // Время фейда
       fadeTime: 100,
       // Скорость авто-нажимания кнопок
-      buttonMagicSpeed: 250
+      buttonMagicSpeed: 250,
+      // Ширина половинки одно полосоки меха :-)
+      bellowsSliceHalfWidth: 30
     }
     
-    _this.initialize = function(accordion, bellowsSliceHalfWidth) {
+    _this.initialize = function(garmoshka) {
 
       if (mobileFLAG) {
         alert('Try it on your desktop [:|||||:]');
       }
 
-      _this.$garmoshka = accordion;
+      _this.$garmoshka = garmoshka;
       _this.$bellows = $('.bellows', _this.$garmoshka);
       _this.$bellowsSlice = $('.slice', _this.$bellows);
       _this.$bellowsSliceHalfLeft = $('.slice .l', _this.$garmoshka);
@@ -40,13 +42,13 @@
         _this.audio.src = _this.audio.src.replace('.ogg', '.mp3');
       }
 
-      _this.$melodyButtons = $('.melody b', _this.$garmoshka);
+      _this.$melodyButtons = $('.melody button', _this.$garmoshka);
       _this.melodyButtonsSize = _this.$melodyButtons.size();
-      _this.$chordsButtons = $('.chords b', _this.$garmoshka);
+      _this.$chordsButtons = $('.chords button', _this.$garmoshka);
       _this.chordsButtonsSize = _this.$chordsButtons.size();
       _this.$allButtons = _this.$melodyButtons.add(_this.$chordsButtons);
 
-      _this.bellowsSliceHalfWidth = bellowsSliceHalfWidth;
+      _this.bellowsSliceHalfWidth = options.bellowsSliceHalfWidth;
 
       $window.on('load resize', _this.onResize);
 
@@ -70,16 +72,14 @@
       if (!volume) volume = 100;
       if (!_this.playFLAG) {
         _this.playFLAG = true;
+        _this.audio.play();
+        if (magic) {
+          _this.buttonMagicStart();
+        }
         jTweener.removeTween(_this.volumeFader);
         jTweener.addTween(_this.volumeFader, {
           value: volume,
-          time: options.fadeTime / 1000,
-          onStart: function() {
-            _this.audio.play();
-            if (magic) {
-              _this.buttonMagicStart();
-            }
-          }
+          time: options.fadeTime / 1000
         });
       }
     }
@@ -88,13 +88,13 @@
       if (!volume) volume = 0;
       if (_this.playFLAG) {
         _this.playFLAG = false;
-        _this.buttonMagicStop();
         jTweener.removeTween(_this.volumeFader);
         jTweener.addTween(_this.volumeFader, {
           value: volume,
           time: options.fadeTime / 1000,
           onComplete: function() {
             _this.audio.pause();
+            _this.buttonMagicStop();
           }
         });
       }
@@ -167,6 +167,6 @@
   $(function(){
     // Достаём гармошку, хромку
     var Hromka = new Garmoshka();
-    Hromka.initialize($('#garmoshka'), 30);
+    Hromka.initialize($('#garmoshka'));
   });
 })();
