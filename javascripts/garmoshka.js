@@ -1,14 +1,12 @@
-/*! Garmoshka | Artem Polikarpov */
+/*! Garmoshka | https://github.com/artpolikarpov/garmoshka */
 (function(){
   var $window = $(window);
   var userAgent = navigator.userAgent.toLowerCase();
   var mobileFLAG = userAgent.match(/(phone|ipod|ipad|windows ce|netfront|playstation|midp|up\.browser|android|mobile|mini|tablet|symbian|nintendo|wii)/);
 
-  // использование Math.round() даст неравномерное распределение!
   var getRandomInt = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-
 
   var Garmoshka = function(){
     var _this = this;
@@ -109,7 +107,7 @@
 
     _this.buttonMagic = function() {
       _this.$allButtons.removeClass('active');
-      // Сколько кнопок нажать в правом ряду, 1-3
+      // Сколько кнопок нажать в правом ряду, 1-2
       var melodyButtonsSize = getRandomInt(1, 2);
       for (var _i = 0; _i < melodyButtonsSize; _i++) {
         // Нажимаем случайную кнопку
