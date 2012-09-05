@@ -7,6 +7,7 @@ body {
 
 /* line 23, ../sass/garmoshka.sass */
 .garmoshka {
+  max-width: 1600px;
   min-width: 560px;
   min-height: 590px;
   position: absolute;
